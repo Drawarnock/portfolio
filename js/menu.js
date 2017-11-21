@@ -36,7 +36,8 @@
     let windowWidth = window.innerWidth;
     let hiddenButton = document.querySelector('.nav__btn--hidden');
     let visibleButtons = document.querySelectorAll('.main');
-
+    let openedLinks = document.querySelectorAll('.nav__link');
+    const nav = document.querySelector('.nav');
     if (windowWidth < 768) {
 
         hiddenButton.classList.remove('nav__btn--hidden');
@@ -73,5 +74,8 @@
             }
         });
     });
-
+    
+ openedLinks.forEach(link => link.addEventListener('click', function() {
+     nav.classList.remove('nav--open');
+ }));
 })();

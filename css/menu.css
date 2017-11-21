@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box; }
 
+html,
+body {
+  overflow-x: hidden; }
+
 .navbar {
   display: flex;
   flex-flow: row;
@@ -24,18 +28,27 @@
   width: 150px; }
   .nav__btn--hidden {
     display: none; }
-  .nav__btn:link, .nav__btn:visited, .nav__btn:focus {
+  .nav__btn:link, .nav__btn:visited {
     text-decoration: none;
     color: white;
     font-size: 1.5rem;
     background-color: transparent; }
   .nav__btn:hover {
     background-color: black; }
-.nav__link:link, .nav__link:visited {
-  text-decoration: none;
-  color: white;
-  font-size: 2rem;
-  border: 1px solid red; }
+.nav__link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .nav__link:link, .nav__link:visited {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    transition: all 0.7s ease-in-out; }
+  .nav__link:hover {
+    background-color: black;
+    text-shadow: 0px 1px 1px red, 0px -1px 1px red, 1px 0px 1px red, -1px 0px 1px red; }
 .nav__content {
   position: absolute;
   top: 0;
@@ -57,7 +70,8 @@
   background: rgba(0, 0, 0, 0.5);
   border: none;
   flex: 1 1 100%;
-  transition: transform 0.2s ease-in-out; }
+  transition: transform 0.2s ease-in-out;
+  display: flex; }
   .nav__slice:nth-child(odd) {
     transform: translateX(-100%); }
   .nav__slice:nth-child(even) {
