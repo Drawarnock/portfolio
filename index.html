@@ -7,6 +7,7 @@
         <meta name="author" content="Konrad Wisłocki" />
         <meta name="description" content="" />
         <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&amp;subset=latin-ext" rel="stylesheet">
+        <link href="css/menu.css" rel="stylesheet"/>
         <link href="css/style.css" rel="stylesheet"/>
     </head>
     <body>
@@ -14,15 +15,31 @@
     
             <header id="header "class="pageheader">
                   <div class="overlay-container">
-            <nav class="navbar">
-                <ul class="navbarlist">
-                    <li class="navbarlist__item navbarlist__item--left"><a class="navbarlist__link" href="#header">LOGO</a><li>
-                    <li class="navbarlist__item navbarlist__item--right"><a class="navbarlist__link" href="#about">O MNIE</a><li>
-                    <li class="navbarlist__item navbarlist__item--right"><a class="navbarlist__link" href="#skills">UMIEJĘTNOŚCI</a><li>
-                    <li class="navbarlist__item navbarlist__item--right"><a class="navbarlist__link" href="#projects">PROJEKTY</a><li>
-                    <li class="navbarlist__item navbarlist__item--right"><a class="navbarlist__link" href="#contact">KONTAKT</a><li>
-                </ul>
-            </nav>
+           <nav class="nav">
+        <div class="navbar">
+            <div class="nav__logo"></div>
+            <div><a class="nav__btn nav__btn--link main" href="#about">O MNIE</a></div>
+            <div><a class="nav__btn nav__btn--link main" href="#skills">UMIEJĘTNOŚCI</a></div>
+            <div><a class="nav__btn nav__btn--link main" href="#projects">PROJEKTY</a></div>
+            <div><a class="nav__btn nav__btn--link main" href="#contact">KONTAKT</a></div>
+            <div class="nav__btn nav__btn--hidden">
+                <div class="single__bar single__bar--menu"></div>
+                <div class="single__bar single__bar--menu"></div>
+                <div class="single__bar single__bar--menu"></div>
+                <div class="single__bar single__bar--close"></div>
+                <div class="single__bar single__bar--close"></div>
+            </div>
+        </div>
+        <div class="nav__content">
+            <div class="nav__background">
+                <div class="nav__slice">LOGO</div>
+                <div class="nav__slice"><a class="nav__link" href="#about">O MNIE</a></div>
+                <div class="nav__slice"><a class="nav__link" href="#skills">UMIEJĘTNOŚCI</a></div>
+                <div class="nav__slice"><a class="nav__link" href="#projects">PROJEKTY</a></div>
+                <div class="nav__slice"><a class="nav__link" href="#contact">KONTAKT</a></div>
+            </div>
+        </div>
+    </nav>
                       <span class="title"><h1>Konrad Wisłocki</h1> FRONT-END DEVELOPER</span>
               </div>
             </header>
@@ -48,5 +65,6 @@
                 </div>
             </footer>
         </div>
+        <script src=js/menu.js></script>
     </body>
 </html>

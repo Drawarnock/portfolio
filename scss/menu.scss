@@ -1,0 +1,178 @@
+// root settings / variables
+//$app-hide-overflow: true; // set to false to see everything that's going on
+$btn-bar-width: 1.34em;
+$btn-bar-height: 3px;
+$btn-bar-spacing: 3px;
+$menu-bar-anim-time: 0.3s;
+$menu-bar-anim-offset: 400%;
+$close-bar-anim-time: 0.2s;
+$close-bar-anim-offset: 250%;
+$background-anim-time: $close-bar-anim-time;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav {
+
+    &bar {
+        display: flex;
+        flex-flow: row;
+        position: relative;
+        z-index: 3;
+        list-style-type: none;
+        background-color: transparent;
+
+    }
+
+    &__logo {
+        flex: 1 1 100%;
+        padding: 20px;
+    }
+
+    &__btn {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        flex: 0;
+        padding: 20px;
+        width: 150px;
+        &--hidden {
+            display: none;
+        }
+        &:link,
+        &:visited,
+        &:focus {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            background-color: transparent;
+        }
+        &:hover {
+            background-color: black;
+        }
+
+    }
+    
+    &__link
+    {
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: white;
+            font-size: 2rem;
+            border: 1px solid red;
+        
+        }
+    }
+
+    &__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        transition: z-index 0.01s ease-in-out $background-anim-time;
+
+    }
+
+    &__background {
+        position: absolute;
+        display: flex;
+        flex-flow: column;
+        align-items: stretch;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+    }
+
+    &__slice {
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+        flex: 1 1 100%;
+        transition: transform $background-anim-time ease-in-out;
+
+        &:nth-child(odd) {
+            transform: translateX(-100%);
+        }
+        &:nth-child(even) {
+            transform: translateX(100%);
+        }
+        &:not(:first-child) {
+            margin-top: -1px;
+        }
+    }
+
+    &.nav--open {
+        .single__bar.single__bar--menu {
+
+            opacity: 0;
+            &:nth-child(odd) {
+                transform: translateX(-$menu-bar-anim-offset);
+            }
+            &:nth-child(even) {
+                transform: translateX( $menu-bar-anim-offset / 2);
+            }
+            transition: transform $menu-bar-anim-time ease-in-out,
+            opacity ($menu-bar-anim-time / 2) ease-in-out ($menu-bar-anim-time / 2);
+        }
+        .single__bar.single__bar--close {
+            opacity: 1;
+            &:not(:last-child) {
+                transform: rotate( 45deg);
+            }
+            &:last-child {
+                transform: rotate(-45deg);
+            }
+            transition: transform $close-bar-anim-time ease-in-out $menu-bar-anim-time,
+            opacity ($close-bar-anim-time / 4) ease-in-out $menu-bar-anim-time;
+        }
+        .nav__content {
+            z-index: 1;
+            transition: z-index 0.01s ease-in-out $menu-bar-anim-time;
+        }
+        .nav__slice {
+            transform: translateX(0%);
+            transition: transform $background-anim-time ease-in-out $menu-bar-anim-time;
+        }
+    }
+}
+
+.single__bar {
+    position: relative;
+    width: $btn-bar-width;
+    height: $btn-bar-height;
+    border-radius: 5px;
+    background: white;
+
+    &.single__bar--menu {
+        transition: transform $menu-bar-anim-time ease-in-out $close-bar-anim-time,
+        opacity ($menu-bar-anim-time / 2) ease-in-out $close-bar-anim-time;
+        &:not(:first-child) {
+            margin-top: $btn-bar-spacing;
+        }
+    }
+
+    &.single__bar--close {
+        transform-origin: center center;
+        position: absolute;
+        margin-top: -$btn-bar-height / 2;
+        opacity: 0;
+        top: 50%;
+        transition: transform $close-bar-anim-time ease-in-out, opacity ($close-bar-anim-time / 4) ease-in-out $close-bar-anim-time;
+
+        &:not(:last-child) {
+            transform: rotate( 45deg) translateX(-$close-bar-anim-offset);
+        }
+        &:last-child {
+            transform: rotate(-45deg) translateX( $close-bar-anim-offset);
+        }
+    }
+}
