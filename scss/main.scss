@@ -1,5 +1,6 @@
 /*---------------------------------------------------variables-----------------------------------------------------*/
 $grid-columns: 12;
+$text-shadow: 2px 2px 3px #323232;
 
 @mixin border-box {
     -webkit-box-sizing: border-box;
@@ -21,11 +22,11 @@ body {
 }
 
 img {
-    display: block;
+    display:block;
     max-width:100%;
     height:auto;
+    margin:auto;
 }
-
 .container {
     width: 100%;
     margin: 0 auto;
@@ -33,9 +34,14 @@ img {
 
 .section__divider {
     width:1px;
-    height:90vh;
+    height:1000px;
     border:1px solid black;
     margin: auto;
+}
+
+hr {
+    width:90%;
+    margin:auto;
 }
 
 //clearfix
@@ -61,8 +67,8 @@ img {
 
 [class*='column-'] {
     float: left;
+    display: block;
     padding: 1em;
-    width: 100%;
     min-height: 1px; 
     }
 
@@ -153,19 +159,56 @@ img {
     }
 }
 
-/*---------------------------------------------------------ABOUT--------------------------------------------------------*/
-.about {
-   height: 900px;
-}
-.about__title {
+.section__title {
     padding-top:100px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     color:black;
     text-align:center;
     font-size:3rem;
-    text-shadow: 2px 2px 3px #323232;
+    text-shadow: $text-shadow;
+}
+/*---------------------------------------------------------ABOUT--------------------------------------------------------*/
+.about {
+   min-height: 1000px;
+   margin-bottom:20px;
+    &__icon {
+        display:inline-block;
+        border-right: 1px solid black;
+        text-align:center;
+        padding:10px;
+    }
+    &__item {
+        border: 1px solid black;
+        font-size: 1.5rem;
+        margin-top: 20px;
+    }
+
+    &__description {
+        text-align: justify;
+        padding-top: 50px;
+        font-size: 1.5rem;
+    }
+    &__data {
+        padding: 0 10px;
+    }
+    
 }
 
+.skills {
+    min-height: 1000px;
+    &__item {
+        float:left;
+        width:300px;
+        height:400px;
+    }
+
+    &__img--flex {
+        display: flex;
+        justify-content:space-around;
+        flex-wrap:wrap;
+        flex: 1;
+    }
+}
 /*--------------------------------------------------------FOOTER------------------------------------------------------------------*/
 
 footer {

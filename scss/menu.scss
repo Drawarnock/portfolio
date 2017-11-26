@@ -137,6 +137,9 @@ body {
     }
 
     &.nav--open {
+        .nav__content, .nav__background {
+            position: fixed;
+        }
         .single__bar.single__bar--menu {
 
             opacity: 0;

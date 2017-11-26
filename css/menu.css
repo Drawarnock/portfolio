@@ -90,6 +90,8 @@ body {
       transform: translateX(100%); }
     .nav__slice:not(:first-child) {
       margin-top: -1px; }
+  .nav.nav--open .nav__content, .nav.nav--open .nav__background {
+    position: fixed; }
   .nav.nav--open .single__bar.single__bar--menu {
     opacity: 0;
     transition: transform 0.3s ease-in-out, opacity 0.15s ease-in-out 0.15s; }

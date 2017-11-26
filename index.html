@@ -8,6 +8,7 @@
         <meta name="description" content="" />
         <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&amp;subset=latin-ext" rel="stylesheet">
         <link href="css/my_animations.css" rel="stylesheet"/>
+        <link href="css/fontello.css" rel="stylesheet"/>
         <link href="css/menu.css" rel="stylesheet"/>
         <link href="css/style.css" rel="stylesheet"/>
     </head>
@@ -41,44 +42,101 @@
             </div>
         </div>
     </nav>
-                      <span class="pageheader__title"><h1>Konrad Wisłocki</h1><h2 class="subtitle"> FRONT-END DEVELOPER</h2></span>
+                    <span class="pageheader__title"><h1>Konrad Wisłocki</h1><h2 class="subtitle"> FRONT-END DEVELOPER</h2></span>
               </div>
             </header>
             <section id="about" class="about">
-                    <h1 class="about__title">O mnie</h1>
-                    <div class=>
+                    <h1 class="section__title">O mnie</h1>
                     <div class="row">
-                            <div class="column-lg-1"></div>
-                        <div class="column-lg-4" >
-                            <section class="about__data">
+                            <div class="column-md-1"></div>
+                        <div class="column-md-4 column-xs-10" >
+                            <section class="about__information">
                                 <img class="img_radius" src="img/kw.jpg" alt="Konrad Wisłocki">
-                               <p>imię i nazwisko: Konrad Wisłocki</p>
-                               <p>data urodzenia: 01.03.1993</p>
-                               <p>miejscowość: Kraków</p>
-                               <p>adres e-mail: wislockik23@gmail.com</p>
-                               <p>telefon: 515974755</p>
+                                <p class="about__item"><span class="about__icon"><i class="icon-user"></i></span><span class="about__data">imię i nazwisko: Konrad Wisłocki</span></p>
+                                <p class="about__item"><span class="about__icon"><i class="icon-birthday"></i></span><span class="about__data">data urodzenia: 01.03.1993</span></p>
+                                <p class="about__item"><span class="about__icon"><i class="icon-home"></i></span><span class="about__data">miejscowość: Kraków</span></p>
+                                <p class="about__item"><span class="about__icon"><i class="icon-mail"></i></span><span class="about__data">adres e-mail: wislockik23@gmail.com</span></p>
+                                <p class="about__item"><span class="about__icon"><i class="icon-phone"></i></span><span class="about__data">telefon: 515974755</span></p>
                             </section>
-                        </p>
                         </div>
-                        <div class="column-lg-2">
-                            <div class="section__divider"></div>
-                        </div>
-                        <div class="column-lg-4">
+                        <div class="column-md-1"></div>
+                        <div class="column-md-5 column-xs-12">
                             <section class="about__description">
                                 <p>Cześć. nazywam się Konrad Wisłocki, mam 24 lata. Aktualnie mieszkam w Krakowie. Z 
                                     wykształcenia jestem inżynierem Elektrotechniki, ale swoją przyszłość wiążę z programowaniem.
                                     Programowanie od zawsze mnie interesowało, ale dopiero od paru miesięcy uczę się go na poważnie.
                                     Swoją przygodę z programowaniem zacząlem od C++ już w liceum, jednak programowania webowego uczę 
                                     się od paru miesięcy. W programowaniu dla mnie najbardziej satysfakcjonującą rzeczą jest możliwość
-                                    wymyślenia czegoś i zbudowania od zera, co również jest natrudniejszą rzeczą, bo trzeba mieść sporą
-                                    dozę kreatywności.</p>
-                    </div> 
-                    <div class="column-lg-1"></div>
+                                    wymyślenia czegoś i zbudowania od zera, co również uważam jednocześnie za rzecz natrudniejszą ,
+                                    bo wymaga to sporej dozy kreatywności.</p>
+                            </section>
+                        </div> 
+                    <div class="column-md-1"></div>
+                </div>
             </section>
-            <section id="skills"></section>
+            <hr color="#000000">
+            <section id="skills" class="skills">
+                <h1 class="section__title">Umiejętnośći</h1>
+                <div class="row">
+                    <div class="skills__img--flex">
+                        <div class="skills__item"><img src="img/html5.png" alt="html5 logo" title="HTML5">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a magna nec nisl tempus elementum. 
+                               Proin gravida odio at vehicula pharetra. Pellentesque ultrices facilisis quam quis vehicula. 
+                               Etiam interdum magna purus, efficitur fringilla urna gravida sit amet. Nulla feugiat egestas cursus.</p>
+                            </div>
+                        <div class="skills__item"><img src="img/css3.png" alt="css3 loglo" title="CSS3">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a magna nec nisl tempus elementum. 
+                                    Proin gravida odio at vehicula pharetra. Pellentesque ultrices facilisis quam quis vehicula. 
+                                    Etiam interdum magna purus, efficitur fringilla urna gravida sit amet. Nulla feugiat egestas cursus.</p>
+                        </div>
+                        <div class="skills__item"><img src="img/js.png" alt="JavaScript logo" title="JavaScript"
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a magna nec nisl tempus elementum. 
+                                    Proin gravida odio at vehicula pharetra. Pellentesque ultrices facilisis quam quis vehicula. 
+                                    Etiam interdum magna purus, efficitur fringilla urna gravida sit amet. Nulla feugiat egestas cursus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="skills__img--flex">
+                        <div class="skills__item"><img src="img/jquery.png" alt="jquery logo" title="jQuery">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a magna nec nisl tempus elementum. 
+                               Proin gravida odio at vehicula pharetra. Pellentesque ultrices facilisis quam quis vehicula. 
+                               Etiam interdum magna purus, efficitur fringilla urna gravida sit amet. Nulla feugiat egestas cursus.</p>
+                        </div>
+                        <div class="skills__item"><img src="img/sass.png" alt="sass logo" title="SASS">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a magna nec nisl tempus elementum. 
+                               Proin gravida odio at vehicula pharetra. Pellentesque ultrices facilisis quam quis vehicula. 
+                               Etiam interdum magna purus, efficitur fringilla urna gravida sit amet. Nulla feugiat egestas cursus.</p>
+                        </div>
+                        <div class="skills__item"><img src="img/git.png" alt="git logo" title="GIT">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a magna nec nisl tempus elementum. 
+                               Proin gravida odio at vehicula pharetra. Pellentesque ultrices facilisis quam quis vehicula. 
+                               Etiam interdum magna purus, efficitur fringilla urna gravida sit amet. Nulla feugiat egestas cursus.</p>
+                        </div>
+                    </div>
+                </div>
+               <div class="row">
+                    <div class="skills__img--flex">
+                        <div class="skills__item"><img src="img/photoshop.png" alt="photoshop logo" title="Photoshop">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a magna nec nisl tempus elementum. 
+                               Proin gravida odio at vehicula pharetra. Pellentesque ultrices facilisis quam quis vehicula. 
+                               Etiam interdum magna purus, efficitur fringilla urna gravida sit amet. Nulla feugiat egestas cursus.</p>
+                        </div>
+                        <div class="skills__item"><img src="img/mysql.png" alt="mysql logo" title="MySQL">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a magna nec nisl tempus elementum. 
+                               Proin gravida odio at vehicula pharetra. Pellentesque ultrices facilisis quam quis vehicula. 
+                               Etiam interdum magna purus, efficitur fringilla urna gravida sit amet. Nulla feugiat egestas cursus.</p>
+                        </div>
+                        <div class="skills__item"><img src="img/php.png" alt="php logo" title="PHP">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a magna nec nisl tempus elementum. 
+                               Proin gravida odio at vehicula pharetra. Pellentesque ultrices facilisis quam quis vehicula. 
+                               Etiam interdum magna purus, efficitur fringilla urna gravida sit amet. Nulla feugiat egestas cursus.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr color="#000000">
             <section id="projects"></section>
-         
-             
             <footer>
                 <div class="overlay-footer">
                     <section id="contact">

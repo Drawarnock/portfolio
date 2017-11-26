@@ -14,7 +14,8 @@ body {
 img {
   display: block;
   max-width: 100%;
-  height: auto; }
+  height: auto;
+  margin: auto; }
 
 .container {
   width: 100%;
@@ -22,8 +23,12 @@ img {
 
 .section__divider {
   width: 1px;
-  height: 90vh;
+  height: 1000px;
   border: 1px solid black;
+  margin: auto; }
+
+hr {
+  width: 90%;
   margin: auto; }
 
 .container:after,
@@ -44,8 +49,8 @@ img {
 /*-------------------------------------------------grid system-----------------------------------------------------*/
 [class*='column-'] {
   float: left;
+  display: block;
   padding: 1em;
-  width: 100%;
   min-height: 1px; }
 
 @media only screen and (min-width: 576px) {
@@ -250,17 +255,45 @@ img {
       text-shadow: 0px 1px 1px red, 0px -1px 1px red, 1px 0px 1px red, -1px 0px 1px red;
       font-size: 1.5rem; }
 
-/*---------------------------------------------------------ABOUT--------------------------------------------------------*/
-.about {
-  height: 900px; }
-
-.about__title {
+.section__title {
   padding-top: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   color: black;
   text-align: center;
   font-size: 3rem;
   text-shadow: 2px 2px 3px #323232; }
+
+/*---------------------------------------------------------ABOUT--------------------------------------------------------*/
+.about {
+  min-height: 1000px;
+  margin-bottom: 20px; }
+  .about__icon {
+    display: inline-block;
+    border-right: 1px solid black;
+    text-align: center;
+    padding: 10px; }
+  .about__item {
+    border: 1px solid black;
+    font-size: 1.5rem;
+    margin-top: 20px; }
+  .about__description {
+    text-align: justify;
+    padding-top: 50px;
+    font-size: 1.5rem; }
+  .about__data {
+    padding: 0 10px; }
+
+.skills {
+  min-height: 1000px; }
+  .skills__item {
+    float: left;
+    width: 300px;
+    height: 400px; }
+  .skills__img--flex {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex: 1; }
 
 /*--------------------------------------------------------FOOTER------------------------------------------------------------------*/
 footer {
