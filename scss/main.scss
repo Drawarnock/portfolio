@@ -34,7 +34,7 @@ img {
 
 .section__divider {
     width:1px;
-    height:1000px;
+    height:800px;
     border:1px solid black;
     margin: auto;
 }
@@ -157,7 +157,29 @@ hr {
             font-size: 1.5rem;
         }
     }
+    &__btn {
+        width:60px;
+        height:60px;
+        border: 4px solid white;
+        color:white;
+        font-size: 22px;
+        border-radius:50%;
+        text-align:center;
+        position: absolute;
+        line-height: 52px;
+        top: 85%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            color:black;
+            background: white;
+        }
+    }
+    
 }
+
 
 .section__title {
     padding-top:100px;
@@ -170,7 +192,7 @@ hr {
 /*---------------------------------------------------------ABOUT--------------------------------------------------------*/
 .about {
    min-height: 1000px;
-   margin-bottom:20px;
+   margin-bottom:100px;
     &__icon {
         display:inline-block;
         border-right: 1px solid black;
@@ -194,6 +216,7 @@ hr {
     
 }
 
+/*-----------------------------------------------------skills-------------------------------------------------------*/
 .skills {
     min-height: 1000px;
     &__item {
@@ -208,6 +231,14 @@ hr {
         flex-wrap:wrap;
         flex: 1;
     }
+    &__description {
+        border: 1px solid red;
+        margin-top: 60px;
+    }
+}
+/*--------------------------------------------------------projects---------------------------------------------------*/
+.projects {
+    min-height:1000px;
 }
 /*--------------------------------------------------------FOOTER------------------------------------------------------------------*/
 
