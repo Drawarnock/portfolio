@@ -1,7 +1,12 @@
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 @keyframes fadeIn {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
 
-/*# sourceMappingURL=my_animations.css.map */
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm15X2FuaW1hdGlvbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJO0lBQUksV0FBVSxFQUFBO0VBQ2Q7SUFBTSxXQUFVLEVBQUEsRUFBQTtBQUZwQjtFQUNJO0lBQUksV0FBVSxFQUFBO0VBQ2Q7SUFBTSxXQUFVLEVBQUEsRUFBQSIsImZpbGUiOiJteV9hbmltYXRpb25zLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIkBrZXlmcmFtZXMgZmFkZUluIHtcclxuICAgIDAlIHtvcGFjaXR5OiAwO31cclxuICAgIDEwMCUge29wYWNpdHk6IDE7fVxyXG59Il19 */

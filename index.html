@@ -13,79 +13,80 @@
         <link href="css/style.css" rel="stylesheet"/>
     </head>
     <body>
+
         <div class="container">
-    
-            <header id="header "class="pageheader">
-                  <div class="overlay-container">
-           <nav class="nav">
-        <div class="navbar">
-            <div class="nav__logo"></div>
-            <div><a class="nav__btn nav__btn--link main" href="#about">O MNIE</a></div>
-            <div><a class="nav__btn nav__btn--link main" href="#skills">UMIEJĘTNOŚCI</a></div>
-            <div><a class="nav__btn nav__btn--link main" href="#projects">PROJEKTY</a></div>
-            <div><a class="nav__btn nav__btn--link main" href="#contact">KONTAKT</a></div>
-            <div class="nav__btn nav__btn--hidden">
-                <div class="single__bar single__bar--menu"></div>
-                <div class="single__bar single__bar--menu"></div>
-                <div class="single__bar single__bar--menu"></div>
-                <div class="single__bar single__bar--close"></div>
-                <div class="single__bar single__bar--close"></div>
-            </div>
-        </div>
-        <div class="nav__content">
-            <div class="nav__background">
-                <div class="nav__slice">LOGO</div>
-                <div class="nav__slice"><a class="nav__link" href="#about">O MNIE</a></div>
-                <div class="nav__slice"><a class="nav__link" href="#skills">UMIEJĘTNOŚCI</a></div>
-                <div class="nav__slice"><a class="nav__link" href="#projects">PROJEKTY</a></div>
-                <div class="nav__slice"><a class="nav__link" href="#contact">KONTAKT</a></div>
-            </div>
-        </div>
-    </nav>
-                    <span class="pageheader__title"><h1>Konrad Wisłocki</h1><h2 class="subtitle"> FRONT-END DEVELOPER</h2></span>
-                     <a href="#about" class="bounce pageheader__btn"><i class=" icon-down-big"></i></a>
-              </div>
-            </header>
-            <section id="about" class="about">
-                    <h1 class="section__title">O mnie</h1>
-                    <div class="row">
-                            <div class="column-md-1"></div>
-                        <div class="column-md-4 column-xs-10" >
-                            <section class="about__information">
-                                <img class="img_radius" src="img/kw.jpg" alt="Konrad Wisłocki">
-                                <p class="about__item"><span class="about__icon"><i class="icon-user"></i></span><span class="about__data">imię i nazwisko: Konrad Wisłocki</span></p>
-                                <p class="about__item"><span class="about__icon"><i class="icon-birthday"></i></span><span class="about__data">data urodzenia: 01.03.1993</span></p>
-                                <p class="about__item"><span class="about__icon"><i class="icon-home"></i></span><span class="about__data">miejscowość: Kraków</span></p>
-                                <p class="about__item"><span class="about__icon"><i class="icon-mail"></i></span><span class="about__data">adres e-mail: wislockik23@gmail.com</span></p>
-                                <p class="about__item"><span class="about__icon"><i class="icon-phone"></i></span><span class="about__data">telefon: 515974755</span></p>
-                            </section>
-                        </div>
-                        <div class="column-md-1"></div>
-                        <div class="column-md-5 column-xs-12">
-                            <section class="about__description">
-                                <p>Cześć. nazywam się Konrad Wisłocki, mam 24 lata. Aktualnie mieszkam w Krakowie. Z 
-                                    wykształcenia jestem inżynierem Elektrotechniki, ale swoją przyszłość wiążę z programowaniem.
-                                    Programowanie od zawsze mnie interesowało, ale dopiero od paru miesięcy uczę się go na poważnie.
-                                    Swoją przygodę z programowaniem zacząlem od C++ już w liceum, jednak programowania webowego uczę 
-                                    się od paru miesięcy. W programowaniu dla mnie najbardziej satysfakcjonującą rzeczą jest możliwość
-                                    wymyślenia czegoś i zbudowania od zera, co również uważam jednocześnie za rzecz natrudniejszą ,
-                                    bo wymaga to sporej dozy kreatywności.</p>
-                            </section>
-                        </div> 
-                    <div class="column-md-1"></div>
+            <header id="home" class="pageheader">
+                <div class="overlay-container">
+                        <nav class="nav">
+                                <div class="navbar">
+                                   <div class="nav__logo">
+                                       <a href="#home">
+                                           <picture>
+                                                <source media="(max-width: 767px)" srcset="img/kw_logo_smaller.png">
+                                                <img src="img/kw_logo.png" alt="website logo">
+                                           </picture>
+                                        </a>
+                                    </div>
+                                   <div><a class="nav__btn nav__btn--link main" href="#about" data-visibility="visible">O MNIE</a></div>
+                                   <div><a class="nav__btn nav__btn--link main" href="#skills" data-visibility="visible">UMIEJĘTNOŚCI</a></div>
+                                   <div><a class="nav__btn nav__btn--link main" href="#projects" data-visibility="visible">PROJEKTY</a></div>
+                                   <div><a class="nav__btn nav__btn--link main" href="#contact" data-visibility="visible">KONTAKT</a></div>
+                                   <div class="nav__btn nav__btn--hidden" data-visibility="hidden">
+                                       <div class="single__bar single__bar--menu"></div>
+                                       <div class="single__bar single__bar--menu"></div>
+                                       <div class="single__bar single__bar--menu"></div>
+                                       <div class="single__bar single__bar--close"></div>
+                                       <div class="single__bar single__bar--close"></div>
+                                   </div>
+                               </div>
+                               <div class="nav__content">
+                                   <div class="nav__background">
+                                       <div class="nav__slice"><a class="nav__link" href="#home"> <img src="img/kw_logo.png" alt="website logo"></a></div>
+                                       <div class="nav__slice"><a class="nav__link" href="#about">O MNIE</a></div>
+                                       <div class="nav__slice"><a class="nav__link" href="#skills">UMIEJĘTNOŚCI</a></div>
+                                       <div class="nav__slice"><a class="nav__link" href="#projects">PROJEKTY</a></div>
+                                       <div class="nav__slice"><a class="nav__link" href="#contact">KONTAKT</a></div>
+                                   </div>
+                               </div>
+                           </nav>   
+                    <span class="pageheader__title"><h1>Konrad Wisłocki</h1><h2 class="subtitle">FRONT-END DEVELOPER</h2></span>
+                    <a href="#about" class="pageheader__btn"><i class=" icon-down-big"></i></a>
                 </div>
+            </header>
+            
+            <section id="about" class="about" data-section="mainly_sections">
+                <h1 class="section__title section__title--black">O mnie</h1>
+                <div class="about__section">
+                    <section class="about__information">
+                        <img class="img--circle" src="img/kw.jpg" alt="Konrad Wisłocki">
+                        <p class="about__item"><span class="about__icon"><i class="icon-user"></i></span><span class="about__data">imię i nazwisko: Konrad Wisłocki</span></p>
+                        <p class="about__item"><span class="about__icon"><i class="icon-birthday"></i></span><span class="about__data">data urodzenia: 01.03.1993</span></p>
+                        <p class="about__item"><span class="about__icon"><i class="icon-home"></i></span><span class="about__data">miejscowość: Kraków</span></p>
+                        <p class="about__item"><span class="about__icon"><i class="icon-mail"></i></span><span class="about__data">adres e-mail: wislockik23@gmail.com</span></p>
+                        <p class="about__item"><span class="about__icon"><i class="icon-phone"></i></span><span class="about__data">telefon: 515974755</span></p>
+                    </section>
+                    <section class="about__description about__description--slide-in">
+                        <p><div style="text-align:center;">Cześć.</div> Nazywam się Konrad Wisłocki i mam 24 lata. Aktualnie mieszkam w Krakowie, 
+                        gdzie ukończyłem studia inżynierskie na Politechnice Krakowskiej na kierunku elektrotechnika.
+                        Jednakże swoją przyszłość postanowiłem związać z programowaniem.
+                        Swoją przygodę z programowaniem zacząlem od C++ już w liceum, jednak programowania webowego uczę 
+                        się od paru miesięcy. W programowaniu dla mnie najbardziej satysfakcjonującą rzeczą jest możliwość
+                        wymyślenia czegoś i zbudowania od zera, co również może być problematyczne, bo wymaga to 
+                        dużej kreatywności. W tym momencie poszukuje stażu, gdzie mógłbym zdobyć pierwsze doświadczenie 
+                        oraz poprawiać swoje aktualne i nabyć nowe umiejętnośći.</p>
+                    </section>
+                </div>
+                       
+                   
             </section>
-            <hr color="#000000">
-            <section id="skills" class="skills">
-                <h1 class="section__title">Umiejętnośći</h1>
+            <section id="skills" class="skills" data-section="mainly_sections">
+                <h1 class="section__title section__title--white">Umiejętnośći</h1>
                 <div class="row">
                     <div class="skills__img--flex">
                             
                         <div class="skills__item"><img src="img/html5.png" alt="html5 logo" title="HTML5">
                             <div class="skills__description">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a magna nec nisl tempus elementum. 
-                                Proin gravida odio at vehicula pharetra. Pellentesque ultrices facilisis quam quis vehicula. 
-                                Etiam interdum magna purus, efficitur fringilla urna gravida sit amet. Nulla feugiat egestas cursus.</p>
+                                <p>Tworzenie poprawnie semantycznego kodu oraz optymalizacja pod względem SEO</p>
                             </div>
                         </div>
                         <div class="skills__item"><img src="img/css3.png" alt="css3 loglo" title="CSS3">
@@ -109,7 +110,9 @@
                     <div class="skills__img--flex">
                         <div class="skills__item"><img src="img/jquery.png" alt="jquery logo" title="jQuery">
                             <div class="skills__description">
-                                <p>Tworzenie poprawnie semantycznego kodu oraz optymalizacja pod względem SEO</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a magna nec nisl tempus elementum. 
+                                    Proin gravida odio at vehicula pharetra. Pellentesque ultrices facilisis quam quis vehicula. 
+                                    Etiam interdum magna purus, efficitur fringilla urna gravida sit amet. Nulla feugiat egestas cursus.</p>
                             </div>
                         </div>
                         <div class="skills__item"><img src="img/sass.png" alt="sass logo" title="SASS">
@@ -154,28 +157,27 @@
                     </div>
                 </div>
             </section>
-            <hr color="#000000">
-            <section id="projects" class="projects">
-                <h1 class="section__title">Projekty</h1>
+            <section id="projects" class="projects" data-section="mainly_sections">
+                <h1 class="section__title section__title--black">Projekty</h1>
                 <div class="section__divider"></div>
             </section>
             <footer>
                 <div class="overlay-footer">
-                    <section id="contact">
-                    <form>
-                        <input type="text" name="imie_nazwisko" placeholder="imie i nazwisko" />
-                        <input type="text" name="email" placeholder="adres email" />
-                        <textarea id="message" placeholder="Wpisz swoją wiadomość"></textarea>
-                        <input type="submit" value="wyślij" />
-                    </form>
-                    </section>
-                    <div id="copyright">
-                         Wszelkie prawa zastrzeżone &copy;
-                    </div>
+                    <section id="contact" data-section="mainly_sections">
+                        <h1 class="section__title section__title--white">Kontakt</h1>
+                        <form>
+                            <input type="text" name="imie_nazwisko" placeholder="imie i nazwisko" />
+                            <input type="text" name="email" placeholder="adres email" />
+                            <textarea id="message" placeholder="Wpisz swoją wiadomość"></textarea>
+                            <input type="submit" value="wyślij" />
+                        </form>
+                        </section>
+                        <div id="copyright">
+                            Wszelkie prawa zastrzeżone &copy;
+                        </div>
                 </div>
             </footer>
         </div>
-        <script src=js/menu.js></script>
-        <script src=js/sticky_nav.js></script>
+        <script src="js/main.js"></script>
     </body>
 </html>

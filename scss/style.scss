@@ -39,12 +39,8 @@ img {
     margin: auto;
 }
 
-hr {
-    width:90%;
-    margin:auto;
-}
-
 //clearfix
+.clearfix:after,
 .container:after,
 .row:after {
       content: "";
@@ -59,7 +55,7 @@ hr {
     height: 100vh;
 }
 
-.img_radius {
+.img--circle {
     border-radius: 100%;
 }
 
@@ -70,28 +66,36 @@ hr {
     display: block;
     padding: 1em;
     min-height: 1px; 
+    position: relative;
     }
-
 
 @media only screen and (min-width: 576px) {
         
-    @for $i from 1 through $grid-columns {
+    @for $i from 0 through $grid-columns {
     
        .column-xs-#{$i} { 
            width: 100% / $grid-columns * $i;
        }
-    
+
+       .col-xs-offset-#{$i} {
+           margin-left: 100% / $grid-columns * $i;
+       }
+
    }
 
 }
 
 @media only screen and (min-width: 768px) {
         
-    @for $i from 1 through $grid-columns {
+    @for $i from 0 through $grid-columns {
     
        .column-sm-#{$i} { 
            width: 100% / $grid-columns * $i;
        }
+
+       .col-sm-offset-#{$i} {
+        margin-left: 100% / $grid-columns * $i;
+    }
     
    }
     
@@ -99,11 +103,15 @@ hr {
 
 @media only screen and (min-width: 992px) {
         
-    @for $i from 1 through $grid-columns {
+    @for $i from 0 through $grid-columns {
     
        .column-md-#{$i} { 
            width: 100% / $grid-columns * $i;
        }
+
+       .col-md-offset-#{$i} {
+        margin-left: 100% / $grid-columns * $i;
+    }
     
    }
     
@@ -111,11 +119,15 @@ hr {
 
 @media only screen and (min-width: 1200px) {
         
-    @for $i from 1 through $grid-columns {
+    @for $i from 0 through $grid-columns {
     
        .column-lg-#{$i} { 
            width: 100% / $grid-columns * $i;
        }
+
+       .col-lg-offset-#{$i} {
+        margin-left: 100% / $grid-columns * $i;
+    }
     
    }
     
@@ -123,9 +135,13 @@ hr {
 
 @media only screen and (min-width: 1600px) {
             
-    @for $i from 1 through $grid-columns {
+    @for $i from 0 through $grid-columns {
         
         .column-xl-#{$i} { 
+            width: 100% / $grid-columns * $i;
+        }
+
+        .column-xl-offset-#{$i} { 
             width: 100% / $grid-columns * $i;
         }
         
@@ -135,7 +151,8 @@ hr {
 
 /*------------------------------------------------------HEADER---------------------------------------------------------------*/
 .pageheader {
-    background-image: url('../img/background-header1400x934.jpg');
+    //background-image: url('../img/background-header1400x934.jpg');
+    background-image: url('../img/Space_The_asteroid.jpg');
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -152,9 +169,29 @@ hr {
         color: white;
         font-size:2rem;
         text-shadow: 0px 1px 2px green, 0px -1px 2px green, 1px 0px 2px green, -1px 0px 2px green;
+        width:100%;
+
+        @media only screen and (max-width: 767px) {
+            font-size:1.5rem;
+        }
+
+        @media only screen and (max-width: 575px) {
+            font-size:1rem;
+        }
+
+     
+        
         .subtitle{
             text-shadow: 0px 1px 1px red, 0px -1px 1px red, 1px 0px 1px red, -1px 0px 1px red;
             font-size: 1.5rem;
+
+            @media only screen and (max-width: 767px) {
+                font-size:1.2rem;
+            }
+
+            @media only screen and (max-width: 575px) {
+                font-size:1rem;
+            }
         }
     }
     &__btn {
@@ -171,8 +208,9 @@ hr {
         left: 50%;
         transform: translate(-50%, -50%);
         transition: all .2s ease-in-out;
+        outline:none;
 
-        &:hover {
+        &:hover, &:focus {
             color:black;
             background: white;
         }
@@ -180,45 +218,128 @@ hr {
     
 }
 
-
 .section__title {
-    padding-top:100px;
+    padding-top:80px;
     margin-bottom: 50px;
-    color:black;
     text-align:center;
     font-size:3rem;
     text-shadow: $text-shadow;
+
+    &--white {
+        color:white;
+    }
+    &--black {
+        color:black;
+    }
 }
 /*---------------------------------------------------------ABOUT--------------------------------------------------------*/
 .about {
    min-height: 1000px;
-   margin-bottom:100px;
+   margin-bottom: 100px;
+
     &__icon {
         display:inline-block;
         border-right: 1px solid black;
         text-align:center;
         padding:10px;
+        text-shadow:  0 0 5px green;
+
+        @media only screen and (max-width: 575px) {
+            padding: 5px;
+        }
+
+
     }
     &__item {
         border: 1px solid black;
         font-size: 1.5rem;
         margin-top: 20px;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            color:white;
+            background-color:green;
+        }
     }
 
-    &__description {
-        text-align: justify;
-        padding-top: 50px;
+    &__section {
+        position: relative;
+        margin: 30px auto;
+        padding: 40px;
+        max-width: 90%;
         font-size: 1.5rem;
+        color: #222;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: space-around;
+        text-align: justify;
+        background: #fff;
+        box-shadow: 0 0 5px rgba(0,0,0,.3);
+
+        @media only screen and (max-width: 575px) {
+            font-size:1rem;
+            padding: 10px;
+
+        }
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          z-index: -1;
+          left: 0;
+          top: 0;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: inherit;
+          box-shadow: inherit;
+          transform: rotate(2deg);
+        }
     }
-    &__data {
-        padding: 0 10px;
+
+    &__information, &__description {
+        width:450px;
+    }
+
+    &__information {
+        padding: 10px;
+   
     }
     
+    &__description {
+        padding: 100px 20px 10px;
+        transition: all 1s ease-in-out;
+        &--slide-in {
+            transform: translate(100%);
+            opacity:0;
+
+        &--active {
+            transform: translate(0%);
+            opacity:1;
+            }
+        }
+    }
+
+  
+
+    &__data {
+        font-size:16px;
+        padding: 0 10px;
+
+        @media only screen and (max-width: 575px) {
+            font-size:12px;
+            padding: 0 5px;
+        }
+
+    }
 }
 
 /*-----------------------------------------------------skills-------------------------------------------------------*/
 .skills {
     min-height: 1000px;
+    background-image: url('../img/Hyades.jpg');
+    color:white;
     &__item {
         float:left;
         width:300px;
