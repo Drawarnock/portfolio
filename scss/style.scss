@@ -1,4 +1,3 @@
-/*---------------------------------------------------variables-----------------------------------------------------*/
 $grid-columns: 12;
 $text-shadow: 2px 2px 3px #323232;
 
@@ -32,13 +31,6 @@ img {
     margin: 0 auto;
 }
 
-.section__divider {
-    width:1px;
-    height:800px;
-    border:1px solid black;
-    margin: auto;
-}
-
 //clearfix
 .clearfix:after,
 .container:after,
@@ -67,8 +59,11 @@ img {
     padding: 1em;
     min-height: 1px; 
     position: relative;
+    @media only screen and (max-width: 575px) {
+        width:100%
     }
 
+}
 @media only screen and (min-width: 576px) {
         
     @for $i from 0 through $grid-columns {
@@ -235,7 +230,7 @@ img {
 /*---------------------------------------------------------ABOUT--------------------------------------------------------*/
 .about {
    min-height: 1000px;
-   margin-bottom: 100px;
+   padding-bottom: 100px;
 
     &__icon {
         display:inline-block;
@@ -255,6 +250,7 @@ img {
         font-size: 1.5rem;
         margin-top: 20px;
         transition: all 0.2s ease-in-out;
+        opacity: inherit;
 
         &:hover {
             color:white;
@@ -304,24 +300,32 @@ img {
 
     &__information {
         padding: 10px;
+        transition: all 1s ease-in-out;
+        &--slide-in {
+            transform: translate(-150%);
+            opacity:0;
+            &.about__information--slide-in-active{
+            transform: translate(0%);
+            opacity:1;
+            
+            }
+        }
    
     }
     
     &__description {
-        padding: 100px 20px 10px;
+        padding: 60px 20px 10px;
         transition: all 1s ease-in-out;
         &--slide-in {
-            transform: translate(100%);
+            transform: translate(150%);
             opacity:0;
 
-        &--active {
+            &.about__description--slide-in-active{
             transform: translate(0%);
             opacity:1;
             }
         }
     }
-
-  
 
     &__data {
         font-size:16px;
@@ -337,13 +341,22 @@ img {
 
 /*-----------------------------------------------------skills-------------------------------------------------------*/
 .skills {
-    min-height: 1000px;
+    min-height: 1200px;
     background-image: url('../img/Hyades.jpg');
     color:white;
     &__item {
-        float:left;
         width:300px;
         height:400px;
+        transition: all .8s ease-in-out;
+        &--slide-in {
+            transform: translateY(10%);
+            opacity:0;
+            &.skills__item--slide-in-active{
+            transform: translateY(0%);
+            opacity:1;
+            
+            }
+        }
     }
 
     &__img--flex {
@@ -359,8 +372,108 @@ img {
 }
 /*--------------------------------------------------------projects---------------------------------------------------*/
 .projects {
-    min-height:1000px;
+    min-height:1200px;
+    padding-bottom:100px;
+    &__tile {
+        position: relative;
+        max-width: 100%;
+        min-height: 400px;
+        border: 1px solid black;
+        box-shadow: 0px 0px 5px #232323;
+        background-image: url('../img/image-placeholder.jpg');
+        background-position: center center;
+        background-size:cover;
+
+        transition: all 1s ease-in-out;
+        &--slide-in {
+            transform: translateY(20%);
+            opacity:0;
+            &.projects__tile--slide-in-active{
+            opacity:1;
+            transform: translateY(0%);
+            }
+        }
+   
+    &--overlay {
+         width: 100%;
+         background-color: rgb(0, 0, 0);
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         height: 100%;
+         width: 100%;
+         opacity: 0;
+         transition: .5s ease;
+         font-size:32px;
+         color:white;
+       
+     }
+
+     &:hover { 
+         .projects__tile--overlay {
+            opacity: 0.8;
+            }
+        }
+    }
+    
+    &__name {
+        padding-top: 15%;
+        text-align:center;
+    }
+
+    &__description {
+        text-align:center;
+        font-size:20px;
+        padding: 10% 10% 5% 10%;
+    }
+
+    &__github {
+        border:1px solid white;
+        color: white;
+        width:50px;
+        height:50px;
+        text-align:center;
+        transition: all .5s ease;
+        display:inline-block;
+        text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+ 
+        &:hover {
+            background-color: white;
+            color:black;
+        }
+    }
+    &__live {
+        text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+        color: white;
+        text-decoration:none;
+        height: 50px;
+        width: 100px;
+        border: 1px solid white;
+        display: inline-block;
+        text-align:center;
+        transition: all .5s ease;
+        &:hover {
+            background-color: white;
+            color:black;
+        }
+    }
+
+    &__buttons {
+       display:flex;
+       justify-content: space-around;
+       margin:auto;
+       align-items: flex-end;
+    }
 }
+
+#portfolio_project {
+    background-image: url('../img/portfolio.jpg');
+    background-position: center center;
+    background-size:cover;
+}
+
 /*--------------------------------------------------------FOOTER------------------------------------------------------------------*/
 
 footer {
@@ -369,48 +482,57 @@ footer {
     background-image: url('../img/background-contact.png');
     background-repeat: no-repeat;
     background-position: center center;
-    
-    .overlay-footer {
+
+    .footer__overlay {
         background-color: rgba(0, 0, 0, 0.6);
         min-height: inherit;
     
     }
 }
 
-input, #message {
-    margin-left:auto;
-    margin-right:auto;
-    display:block;
-    background-color: transparent;
-    margin-top: 5%;
-    padding: 1%;
-    width:33.3333333333%;
-    color:white;
-    outline:none;
+.contact {
+      &__data, &__message {
+        margin-left:auto;
+        margin-right:auto;
+        display:block;
+        background-color: transparent;
+        margin-top: 5%;
+        padding: 1%;
+        width:33.3333333333%;
+        color:white;
+        outline:none;
+    }
+
+    &__data {
+        border: none;
+        border-bottom: 1px solid white;
+    }
+
+    &__submit {
+        margin-top: 50px;
+        border: 1px solid white;
+        width:25%;
+        background-color: black;
+        padding: 20px;
+        color:white;
+        transition: all 0.5s ease;
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+        &:hover {
+            background-color:white;
+            color:black;
+        }
+    }
+
+    &__message {
+        height:200px;
+        resize:none;
+    }
 }
 
-#message {
-    height:200px;
-    resize:none;
-}
 
-input {
-    border: none;
-    border-bottom: 1px solid white;
-}
-
-input[type="submit"] {
-    border: 1px solid white;
-    width:20%;
-}
-
-input[type="submit"]:hover {
-    background-color:white;
-    color:black;
-    box-shadow: 0px 0px 0px 20px white;
-}
-
-#copyright {
+.footer__copyright {
     text-align:center;
     margin-top:100px;
     color:white;

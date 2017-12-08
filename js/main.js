@@ -20,7 +20,7 @@
     document.querySelectorAll('.nav__btn').forEach(el => {
         el.addEventListener('click', function () {
             var nav = this.parentElement.parentElement;
-            nav.classList.contains('nav--open') ? nav.classList.remove('nav--open') : nav.classList.add('nav--open')
+            nav.classList.contains('nav--open') ? nav.classList.remove('nav--open') : nav.classList.add('nav--open')         
         });
     });
 });
@@ -115,23 +115,33 @@
         });
     });
 
-    const sec = document.querySelector('.about__description');
-    console.log(sec.offsetTop);
-    console.log(document.getElementById('skills').offsetTop);
-   
-    window.addEventListener('scroll', checkPosition);
-    
-    function checkPosition() {
-        const slideinAt = window.scrollY + window.innerHeight - sec.offsetHeight*0.25;
-        console.log(window.scrollY)
-        const pos = sec.parentNode.parentNode.offsetTop + sec.offsetTop+400 //+ sec.offsetHeight;
-        console.log('pos = '+ pos);
-        const isHalfShown = slideinAt > pos
+    const animationElements = document.querySelectorAll('[data-fade]');
+   console.dir(animationElements[3]);
 
-        if(isHalfShown) {
-            sec.classList.remove('about__description--slide-in')
-            sec.classList.add('about__description--slide-in--active');
-        }
-    }
+   window.addEventListener('scroll', function() {
+        animationElements.forEach(el => {
+            const slideinAt = window.scrollY + window.innerHeight - el.offsetHeight*0.3;
+            let pos = el.parentNode.parentNode.offsetTop + el.offsetTop;
+            let posBottom = el.parentNode.offsetTop + el.offsetTop + el.offsetHeight;
+            console.dir(el.offsetParent.localName);
+            if(el.offsetParent.localName==="body")
+            {
+                pos = el.offsetTop;
+                posBottom = el.offsetTop + el.offsetHeight;
+            }
+            const isShown = slideinAt > pos
+            const isNotScrolledPassed = window.scrollY < posBottom;
+            const classes = el.getAttribute('class');
+            const index = classes.indexOf(' ');
+            let mainClass;
+            if(index===-1) { mainClass=classes;} else {mainClass = classes.slice(0,index);}
+            console.log(mainClass);
+            if(isShown && isNotScrolledPassed) {
+                el.classList.add(mainClass+'--slide-in-active');
+            } else {
+                el.classList.remove(mainClass +'--slide-in-active');
+            }
+        });
+   });
 
 })();

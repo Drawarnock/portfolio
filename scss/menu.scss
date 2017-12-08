@@ -65,10 +65,11 @@ body {
         height:100%;
         line-height:80px;
         width: 150px;
-        z-index:50;
+        
         @media only screen and (max-width: 767px) {
             width: 60px;
             padding-top: 22px;
+          
         }
 
 
@@ -91,7 +92,7 @@ body {
         }
 
         &--active {
-            box-shadow: inset 0px 0px 10px 10px rgba(24,102,4,1);
+            box-shadow: inset 0px 0px 100px 0px rgb(40, 172, 3);
             text-shadow: 2px 2px 2px rgb(81, 142, 239);
             border-radius:2px;
         }
@@ -170,6 +171,7 @@ body {
     }
 
     &.nav--open {
+        z-index:1;
         .nav__content, .nav__background {
             position: fixed;
         }
