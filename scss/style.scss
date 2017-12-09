@@ -31,7 +31,6 @@ img {
     margin: 0 auto;
 }
 
-//clearfix
 .clearfix:after,
 .container:after,
 .row:after {
@@ -48,7 +47,7 @@ img {
 }
 
 .img--circle {
-    border-radius: 100%;
+    border-radius: 50%;
 }
 
 /*-------------------------------------------------grid system-----------------------------------------------------*/
@@ -128,25 +127,8 @@ img {
     
 }
 
-@media only screen and (min-width: 1600px) {
-            
-    @for $i from 0 through $grid-columns {
-        
-        .column-xl-#{$i} { 
-            width: 100% / $grid-columns * $i;
-        }
-
-        .column-xl-offset-#{$i} { 
-            width: 100% / $grid-columns * $i;
-        }
-        
-    }
-}
-
-
 /*------------------------------------------------------HEADER---------------------------------------------------------------*/
 .pageheader {
-    //background-image: url('../img/background-header1400x934.jpg');
     background-image: url('../img/Space_The_asteroid.jpg');
     height: 100vh;
     background-size: cover;
@@ -215,16 +197,32 @@ img {
 
 .section__title {
     padding-top:80px;
-    margin-bottom: 50px;
+    padding-bottom: 20px;
+    margin: 0 auto 120px;
     text-align:center;
     font-size:3rem;
-    text-shadow: $text-shadow;
+    border-bottom: 5px solid rgb(112, 104, 31);
+    width:30%;
+    
+    @media only screen and (max-width: 767px) {
+        width:60%;
+    }
+
+    @media only screen and (max-width: 575px) {
+        width:60%;
+    }
+
+    @media only screen and (max-width: 330px) {
+        width:80%;
+    }
 
     &--white {
-        color:white;
+       color: white;
+       text-shadow: 2px 2px 5px #adfead;
     }
     &--black {
-        color:black;
+        color: black;
+        text-shadow: $text-shadow;
     }
 }
 /*---------------------------------------------------------ABOUT--------------------------------------------------------*/
@@ -237,7 +235,6 @@ img {
         border-right: 1px solid black;
         text-align:center;
         padding:10px;
-        text-shadow:  0 0 5px green;
 
         @media only screen and (max-width: 575px) {
             padding: 5px;
@@ -314,7 +311,7 @@ img {
     }
     
     &__description {
-        padding: 60px 20px 10px;
+        padding: 60px 20px;
         transition: all 1s ease-in-out;
         &--slide-in {
             transform: translate(150%);
@@ -333,7 +330,11 @@ img {
 
         @media only screen and (max-width: 575px) {
             font-size:12px;
-            padding: 0 5px;
+            padding: 10px 10px;
+        }
+
+        @media only screen and (max-width: 310px) {
+            font-size:10px;
         }
 
     }
@@ -354,7 +355,6 @@ img {
             &.skills__item--slide-in-active{
             transform: translateY(0%);
             opacity:1;
-            
             }
         }
     }
@@ -366,8 +366,9 @@ img {
         flex: 1;
     }
     &__description {
-        border: 1px solid red;
-        margin-top: 60px;
+        margin-top: 50px;
+        padding:10px;
+        text-align: center;
     }
 }
 /*--------------------------------------------------------projects---------------------------------------------------*/
@@ -426,7 +427,7 @@ img {
     &__description {
         text-align:center;
         font-size:20px;
-        padding: 10% 10% 5% 10%;
+        padding: 10%;
     }
 
     &__github {
@@ -496,16 +497,38 @@ footer {
         margin-right:auto;
         display:block;
         background-color: transparent;
-        margin-top: 5%;
-        padding: 1%;
-        width:33.3333333333%;
+        margin-top: 50px;
+        padding: 10px;
+       
         color:white;
         outline:none;
+
+     
     }
 
     &__data {
         border: none;
         border-bottom: 1px solid white;
+        transition: all .5s ease-in-out;
+        font-size: 20px;
+        width:25%;
+
+        &:focus {
+            border-bottom: 1px solid rgb(194, 228, 185);
+        }
+
+        @media only screen and  (max-width: 991px) {
+            width:33.333333333%;
+        }
+
+        @media only screen and  (max-width: 767px) {
+            width:45%;
+        }
+
+        @media only screen and (max-width: 575px) {
+            width:60%;
+            font-size: 16px;
+        }
     }
 
     &__submit {
@@ -522,20 +545,127 @@ footer {
         &:hover {
             background-color:white;
             color:black;
+            cursor: not-allowed;
+        }
+
+        @media only screen and (max-width: 575px) {
+            width:50%
         }
     }
 
     &__message {
+        margin-top:100px;
         height:200px;
         resize:none;
+        width:33.33333333%;
+
+        @media only screen and  (max-width: 991px) {
+            width:50%
+        }
+
+        @media only screen and (max-width: 767px) {
+            width:60%;
+            margin-top:50px;
+        }
+
+        @media only screen and (max-width: 575px) {
+            width:80%;
+        }
     }
 }
 
 
 .footer__copyright {
     text-align:center;
-    margin-top:100px;
+    margin-top:10px;
     color:white;
     
 }
 
+.footer
+{
+    &__socials {
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+        padding: 20px 0;
+        margin-top: 100px;
+    }
+
+
+    &__icon {
+	width: 60px;
+	height:60px;
+	border-radius: 50%;
+	border:1px solid gray;
+	text-align:center;
+	display: inline-block;
+	margin-right: 1%;
+	color:gray;
+	background-color: black;
+    transition: all 0.3s ease-in-out;
+    font-size:32px;
+    padding-top:4px;
+    text-align:center;
+
+        &--fb {
+            &:hover {
+            background-color: #3557a2;
+            color:white;
+            }
+        }
+
+        &--in {
+            &:hover {
+            background-color: #0077B5;
+            color:white;
+            }
+        }
+
+        &--git {
+            &:hover {
+            background-color: white;
+            color:#24292e;
+            }
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+     
+        &--email {
+            color:white;
+            transition: all .5s ease-in-out;
+            &:hover {
+                color: #5c963f;
+            }
+        }
+    }
+
+    &__copyright {
+        background-color: #121212;
+        padding:10px;
+        font-size:20px;
+
+        @media only screen and (max-width: 767px) {
+            font-size:16px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            font-size:10px;
+        }
+    }
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: rgb(194, 228, 185);
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: rgb(194, 228, 185);
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: rgb(194, 228, 185);
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: rgb(194, 228, 185);
+  }
